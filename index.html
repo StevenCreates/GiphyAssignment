@@ -3,33 +3,36 @@
 
 <head>
     <title>Giphy Status</title>
-    <link rel="stylesheet" href="/assets/style/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+
+<meta charset="UTF-8">
+
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 gipyButton"></div>
+            <div id="giphyButtons" class="col-md-12"></div>
         </div>
         <div class="row">
             <div class="col-md-9 giphyHere">
+                
             </div>
             <div class="col-me-3">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search Animal Giphy" aria-label="Animal"
+                    <input id="searchAnimal" type="text" class="form-control" placeholder="Search Animal Giphy" aria-label="Animal"
                         aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+                        <button class="btn btn-outline-secondary" type="button" id="addAnimal">Search</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/function.js"></script>
 </body>
 
 </html>
