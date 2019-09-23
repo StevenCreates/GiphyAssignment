@@ -53,11 +53,16 @@ $(document).ready(function () {
                     giphyDiv.append(animalGiphy);
                     $(".giphyHere").prepend(giphyDiv);
                 }
-            });
-        });
+                changeGif();
+            })
+        })
     }
 
-
+    function changeGif() {
+        $('img').on("click", function () {
+            console.log("I Clicked An Image");
+        })
+    }
 
 
 
