@@ -10,27 +10,35 @@
     <meta charset="UTF-8">
 
 </head>
-
 <body>
+
     <div class="container-fluid">
+            <div class="imgcenter" >
+                <img src="assets/images/Giphy.png" alt="title">
+                </div>
+
         <div class="row">
-            <div id="giphyButtons" class="col-md-12"></div>
+            <div id="giphyButtons" class="currentbuttons col-md-6">
+            </div>
+            <div class="col-me-6 searchCss">
+                    <div class="input-group mb-3">
+                        <input id="searchTopic" type="text" class="form-control" placeholder="Search Topic"
+                            aria-label="Topic" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="addTopic">Search</button>
+                        </div>
+                    </div>
+                </div>
         </div>
         <div class="row">
             <div class="col-md-9 giphyHere">
-
-            </div>
-            <div class="col-me-3">
-                <div class="input-group mb-3">
-                    <input id="searchTopic" type="text" class="form-control" placeholder="Search Topic"
-                        aria-label="Topic" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="addTopic">Search</button>
-                    </div>
-                </div>
             </div>
         </div>
+
+
+
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/function.js"></script>
 

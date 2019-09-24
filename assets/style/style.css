@@ -9,6 +9,25 @@
 
 body{
     background: url(../images/congruent_outline.png);
-    color: azure;
+    color: #c44545;
     font-family: 'Mansalva', cursive;
+}
+
+.imgcenter{
+text-align: center;
+border-bottom: solid #ffc107 3px;
+}
+
+
+.currentbuttons{
+    border-right: solid #ffc107 3px;
+}
+
+.searchCss {
+    margin-top: 30px;
+    margin-left: 1%;
+}
+
+.btn-outline-warning {
+    margin-top: 6px !important;
 }
