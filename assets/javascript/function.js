@@ -1,24 +1,24 @@
 $(document).ready(function () {
 
     //variables and arrays
-    var theAnimals = 
+    var theTopic = 
     ["Penguin", 
     "Sabertooth", 
     "Dog", 
     "Unicorn"
     ];
 
-    //looping animals in the array
+    //looping Topics in the array
     function arrayButtons() {
         $("#giphyButtons").empty();
         var i = 0;
-        for (i = 0; i < theAnimals.length; i++) {
+        for (i = 0; i < theTopic.length; i++) {
 
             var newbut = $("<button>");
 
             newbut.addClass("clickMe btn btn-outline-warning buttonspace");
-            newbut.attr("data-animal", theAnimals[i]);
-            newbut.text(theAnimals[i]);
+            newbut.attr("data-topic", theTopic[i]);
+            newbut.text(theTopic[i]);
 
             $('#giphyButtons').append(newbut);
         }
@@ -27,15 +27,15 @@ $(document).ready(function () {
 
 
     
-    //Add Animal To Array
-    $("#addAnimal").on("click", function (event) {
+    //Add Topics To Array
+    $("#addTopic").on("click", function (event) {
 
         event.preventDefault();
 
-        var animal = $("#searchAnimal").val().trim();
-        console.log(animal);
+        var topic = $("#searchTopic").val().trim();
+        console.log(topic);
 
-        theAnimals.push(animal);
+        theTopic.push(topic);
         arrayButtons();
         clickGiphy();
     });
@@ -46,8 +46,8 @@ $(document).ready(function () {
         $(".clickMe").on("click", function () {
 
             var apiKey = "VLhjWS2b7pKEfcpXxFBILjbY0D9Kvohy";
-            var animal = $(this).attr("data-animal");
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=" + apiKey + "&" + "limit=10&rating=pg-13";
+            var topic = $(this).attr("data-topic");
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&" + "limit=10&rating=pg-13";
             console.log(queryURL);
 
             $.ajax({
@@ -63,15 +63,15 @@ $(document).ready(function () {
 
                     var giphyDiv = $("<div>");
                     var textRating = $('<p>').text("Rating: " + results[i].rating);
-                    var animalGiphy = $("<img>");
+                    var topicGiphy = $("<img>");
 
-                    animalGiphy.attr('src', results[i].images.fixed_height_small_still.url)
-                    animalGiphy.attr('data-state', 'still')
-                    animalGiphy.attr('data-still', results[i].images.fixed_height_small_still.url)
-                    animalGiphy.attr('data-animate', results[i].images.fixed_height_small.url)
+                    topicGiphy.attr('src', results[i].images.fixed_height_small_still.url)
+                    topicGiphy.attr('data-state', 'still')
+                    topicGiphy.attr('data-still', results[i].images.fixed_height_small_still.url)
+                    topicGiphy.attr('data-animate', results[i].images.fixed_height_small.url)
 
                     giphyDiv.append(textRating);
-                    giphyDiv.append(animalGiphy);
+                    giphyDiv.append(topicGiphy);
 
                     $(".giphyHere").prepend(giphyDiv);
                 }
