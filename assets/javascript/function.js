@@ -21,13 +21,12 @@ $(document).ready(function () {
             newbut.text(theAnimals[i]);
 
             $('#giphyButtons').append(newbut);
-
-            clickGiphy();
         }
     };
-
     arrayButtons();
 
+
+    
     //Add Animal To Array
     $("#addAnimal").on("click", function (event) {
 
@@ -38,6 +37,7 @@ $(document).ready(function () {
 
         theAnimals.push(animal);
         arrayButtons();
+        clickGiphy();
     });
 
     //loading giphy onclick
@@ -47,7 +47,7 @@ $(document).ready(function () {
 
             var apiKey = "VLhjWS2b7pKEfcpXxFBILjbY0D9Kvohy";
             var animal = $(this).attr("data-animal");
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=" + apiKey + "&" + "limit=10";
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=" + apiKey + "&" + "limit=10&rating=pg-13";
             console.log(queryURL);
 
             $.ajax({
