@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     //variables and arrays
@@ -104,6 +103,6 @@ $(document).ready(function () {
 
 
 
-
+clickGiphy();
     //document ready finished
 });
