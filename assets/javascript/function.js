@@ -17,10 +17,10 @@ $(document).ready(function () {
         for (i = 0; i < theTopic.length; i++) {
 
             var newbut = $("<button>");
-
             newbut.addClass("clickMe btn btn-outline-warning buttonspace");
             newbut.attr("data-topic", theTopic[i]);
             newbut.text(theTopic[i]);
+            newbut.attr('data-name', theTopic[i].name);
 
             $('#giphyButtons').append(newbut);
         }
@@ -36,7 +36,6 @@ $(document).ready(function () {
 
         var topic = $("#searchTopic").val().trim();
         console.log(topic);
-
         theTopic.push(topic);
         arrayButtons();
         clickGiphy();
@@ -44,12 +43,14 @@ $(document).ready(function () {
 
     //
     //loading giphy onclick
+    var offsetNum = 0;
     function clickGiphy() {
         $(".clickMe").on("click", function () {
-
+            offsetNum=(offsetNum+10);
+            
             var apiKey = "VLhjWS2b7pKEfcpXxFBILjbY0D9Kvohy";
             var topic = $(this).attr("data-topic");
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&" + "limit=10&rating=pg-13";
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&" + "limit=10&rating=pg-13&offset=" +offsetNum;
             console.log(queryURL);
 
             $.ajax({
@@ -71,7 +72,7 @@ $(document).ready(function () {
                     topicGiphy.attr('data-state', 'still')
                     topicGiphy.attr('data-still', results[i].images.fixed_height_still.url)
                     topicGiphy.attr('data-animate', results[i].images.fixed_height.url)
-                    giphyDiv.attr('class','giphyBorder')
+                    giphyDiv.attr('class', 'giphyBorder')
                     giphyDiv.append(topicGiphy);
                     giphyDiv.append(textRating);
 
@@ -93,7 +94,6 @@ $(document).ready(function () {
             if (state == 'still') {
                 $(this).attr('src', $(this).attr('data-animate'));
                 $(this).attr('data-state', 'animate');
-
             }
             else if (state == 'animate') {
                 $(this).attr('src', $(this).attr('data-still'));
@@ -102,6 +102,7 @@ $(document).ready(function () {
         })
 
     }
+
 
 
 
