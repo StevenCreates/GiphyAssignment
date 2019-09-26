@@ -50,7 +50,7 @@ $(document).ready(function () {
             
             var apiKey = "VLhjWS2b7pKEfcpXxFBILjbY0D9Kvohy";
             var topic = $(this).attr("data-topic");
-            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&" + "limit=10&rating=pg-13&offset=" +offsetNum;
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=" + apiKey + "&" + "limit=10&rating=pg&offset=" +offsetNum;
             console.log(queryURL);
 
             $.ajax({
